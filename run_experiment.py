@@ -11,7 +11,7 @@ if __name__ == "__main__":
     model_wrapper = T5ConditionalGeneration().to(device)
     tokenizer = model_wrapper.tokenizer
 
-    df = pd.read_csv(".tmp/preprocessed_card_data.csv")
+    df = pd.read_csv(".tmp/preprocessed_card_data.csv") # DB에서 가져와 함
 
     train_data, test_data = train_test_split(df, test_size=0.2, random_state=42, stratify=df['card_type'])
 

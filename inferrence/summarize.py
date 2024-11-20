@@ -1,10 +1,10 @@
 import torch
 from transformers import T5Tokenizer
 from models.KET5 import T5ConditionalGeneration
-from summarize.utils import generate_summary
+from utils.utils import generate_summary
 
 model_wrapper = T5ConditionalGeneration() 
-model_wrapper.load_state_dict(torch.load('.tmp/best_model.pt'))
+model_wrapper.load_state_dict(torch.load('.tmp/best_model.pt')) # 배포된 store에서 가져와야 함
 model_wrapper.eval()
 
 tokenizer = T5Tokenizer.from_pretrained("KETI-AIR/ke-t5-small-ko")
